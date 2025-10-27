@@ -1,0 +1,12 @@
+# Ignorar node_modules del frontend
+frontend/node_modules
+
+# Ignorar caché de Angular
+frontend/.angular/cache
+
+# (Opcional) Ignorar archivos de VS Code
+.vscode/
+
+# (Opcional) Ignorar archivos del sistema operativo
+.DS_Store
+Thumbs.db
