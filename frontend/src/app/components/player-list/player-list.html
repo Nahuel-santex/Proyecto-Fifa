@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="header">
+    <button (click)="logout()" class="logout-button header-button">Cerrar Sesión</button>
+
+    <h1>Lista de Jugadores</h1>
+
+    <a routerLink="/players/new" class="create-button header-button">
+      + Crear Nuevo Jugador
+    </a>
+  </div>
+
+  <div class="filters">
+    <input type="text" [(ngModel)]="filters.name" placeholder="Buscar por Nombre...">
+    <input type="text" [(ngModel)]="filters.club" placeholder="Buscar por Club...">
+    <input type="text" [(ngModel)]="filters.position" placeholder="Buscar por Posición...">
+    <button (click)="onFilterChange()">Filtrar</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Club</th>
+        <th>Posición</th>
+        <th>Overall</th>
+        <th>Nacionalidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+            <tbody>
+    <tr *ngFor="let player of players">
+
+        <td>
+        <a [routerLink]="['/players', player.id]">{{ player.long_name }}</a>
+        </td>
+
+        <td>{{ player.club_name }}</td>
+        </tr>
+    </tbody>
+        <td>{{ player.club_name }}</td>
+        <td>{{ player.player_positions }}</td>
+        <td>{{ player.overall }}</td>
+        <td>{{ player.nationality_name }}</td>
+      </tr>
+      <tr *ngIf="players.length === 0">
+        <td colspan="5">No se encontraron jugadores.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>

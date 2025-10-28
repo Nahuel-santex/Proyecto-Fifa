@@ -1,0 +1,62 @@
+<div class="container">
+
+  <a routerLink="/players" class="back-link">&larr; Volver a la lista</a>
+  <a [routerLink]="['/players', player.id, 'edit']" class="edit-button">
+      Editar Jugador
+    </a>
+
+  <div *ngIf="player; else loading">
+
+    <div class="header">
+      <h1>{{ player.long_name }}</h1>
+      <h2>Overall: {{ player.overall }}</h2>
+    </div>
+
+    <div class="details-grid">
+      <div class="chart-container">
+        <canvas baseChart
+          [data]="radarChartData"
+          [options]="radarChartOptions"
+          [type]="radarChartType">
+        </canvas>
+      </div>
+
+      <div class="info">
+        <h3>Detalles</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <p><strong>Club:</strong> {{ player.club_name || 'N/A' }}</p>
+          </div>
+          <div class="stat-item">
+            <p><strong>Posición:</strong> {{ player.player_positions }}</p>
+          </div>
+          <div class="stat-item">
+            <p><strong>Nacionalidad:</strong> {{ player.nationality_name }}</p>
+          </div>
+          <div class="stat-item stat-skill">
+            <p><strong>Pace:</strong> {{ player.pace }}</p>
+          </div>
+          <div class="stat-item stat-skill">
+            <p><strong>Shooting:</strong> {{ player.shooting }}</p>
+          </div>
+          <div class="stat-item stat-skill">
+            <p><strong>Passing:</strong> {{ player.passing }}</p>
+          </div>
+          <div class="stat-item stat-skill">
+            <p><strong>Dribbling:</strong> {{ player.dribbling }}</p>
+          </div>
+          <div class="stat-item stat-skill">
+            <p><strong>Defending:</strong> {{ player.defending }}</p>
+          </div>
+          <div class="stat-item stat-skill">
+            <p><strong>Physic:</strong> {{ player.physic }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <ng-template #loading>
+    <p *ngIf="!errorMessage">Cargando jugador...</p>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </ng-template>
+  </div> ```

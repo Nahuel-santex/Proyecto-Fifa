@@ -1,0 +1,104 @@
+
+.container {
+
+}
+
+.header {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header h1 {
+  margin: 0; 
+  text-align: center;
+  flex-shrink: 1;
+}
+
+.header-button {
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  white-space: nowrap; 
+  text-align: center;
+}
+
+.logout-button {
+  background-color: #dc3545; 
+  color: white;
+  border: none; 
+}
+
+.create-button {
+  background-color: #28a745; 
+  color: white;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.filters input[type="text"] {
+  flex-grow: 1; 
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.filters button {
+  padding: 12px 20px;
+  background-color: #007bff; 
+  color: white;
+  flex-shrink: 0; 
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+ th, td {
+  border: 1px solid #e0e0e0; 
+  padding: 14px 16px; 
+  text-align: left;
+  vertical-align: middle; 
+}
+
+thead th {
+  background-color: #f8f9fa; 
+  color: #495057;
+  font-weight: 600; 
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fdfdfd; 
+}
+
+tbody tr:hover {
+  background-color: #e9ecef; 
+}
+
+td a {
+  color: #0056b3; 
+  text-decoration: none;
+  font-weight: 500;
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+td[colspan="5"] {
+  text-align: center;
+  padding: 30px;
+  color: #6c757d;
+  font-style: italic;
+}

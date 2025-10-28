@@ -1,0 +1,70 @@
+<div class="container">
+
+  <div class="header">
+    <h1>¡Create a vos como jugador!</h1>
+    <p>Rellena tus stats soñadas.</p>
+  </div>
+
+  <form (ngSubmit)="onSave()" class="edit-form">
+
+    <div class="form-group">
+      <label for="long_name">Nombre:</label>
+      <input type="text" id="long_name" [(ngModel)]="player.long_name" name="long_name">
+    </div>
+
+    <div class="form-group">
+      <label for="club_name">Club:</label>
+      <input type="text" id="club_name" [(ngModel)]="player.club_name" name="club_name">
+    </div>
+
+    <div class="form-group">
+      <label for="player_positions">Posición:</label>
+      <input type="text" id="player_positions" [(ngModel)]="player.player_positions" name="player_positions">
+    </div>
+
+    <div class="form-group">
+      <label for="overall">Overall:</label>
+      <input type="number" id="overall" [(ngModel)]="player.overall" name="overall">
+    </div>
+
+    <hr>
+    <h3>Skills (Habilidades)</h3>
+
+    <div class="skills-grid">
+      <div class="form-group">
+        <label for="pace">Pace (Ritmo):</label>
+        <input type="number" id="pace" [(ngModel)]="player.pace" name="pace">
+      </div>
+      <div class="form-group">
+        <label for="shooting">Shooting (Tiro):</label>
+        <input type="number" id="shooting" [(ngModel)]="player.shooting" name="shooting">
+      </div>
+      <div class="form-group">
+        <label for="passing">Passing (Pase):</label>
+        <input type="number" id="passing" [(ngModel)]="player.passing" name="passing">
+      </div>
+      <div class="form-group">
+        <label for="dribbling">Dribbling (Regate):</label>
+        <input type="number" id="dribbling" [(ngModel)]="player.dribbling" name="dribbling">
+      </div>
+      <div class="form-group">
+        <label for="defending">Defending (Defensa):</label>
+        <input type="number" id="defending" [(ngModel)]="player.defending" name="defending">
+      </div>
+      <div class="form-group">
+        <label for="physic">Physic (Físico):</label>
+        <input type="number" id="physic" [(ngModel)]="player.physic" name="physic">
+      </div>
+    </div>
+
+    <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+    <div class="buttons">
+      <button type="submit" class="save-button">¡Crear Jugador!</button>
+      <button type="button" (click)="goBack()" class="cancel-button">Cancelar</button>
+    </div>
+
+  </form>
+
+</div>
